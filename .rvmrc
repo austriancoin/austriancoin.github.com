@@ -1,0 +1,9 @@
+rvm use 1.9.3
+DOMAIN="austriancoin.com"
+git config --global --unset-all user.name
+git config --global --unset-all user.email
+git config --global user.name "Austrian Coin"
+git config --global user.email "support@$DOMAIN"
+sed -i '4d' ~/.ssh/config
+sed -i "4i\  IdentityFile ~/.ssh/${DOMAIN}" ~/.ssh/config
+
